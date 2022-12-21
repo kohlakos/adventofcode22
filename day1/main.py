@@ -1,15 +1,14 @@
 max_cal = 0
 with open("input.txt") as cal_file:
     
-    temp = 0
+    current_calorie = 0
     for cal in cal_file.readlines():
         
         if cal == "\n":
-            if max_cal<temp:
-                max_cal = temp  
-            temp = 0
+            if max_cal < current_calorie:
+                max_cal = current_calorie  
+            current_calorie = 0
         else:    
-            temp += int(cal.rstrip())
+            current_calorie += int(cal.rstrip())
 
 print(max_cal)
-
