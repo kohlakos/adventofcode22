@@ -4,7 +4,9 @@ with open("input.txt") as cal_file:
     
     test = 0
     for cal in cal_file.readlines():
-        test += int(cal.rstrip())
+        
         if cal == "\n":
             print(test)
+        else:
+            test += int(cal.rstrip())
 
