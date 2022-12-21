@@ -1,4 +1,3 @@
-elf_number = 0
 max_cal = 0
 with open("input.txt") as cal_file:
     
@@ -6,9 +5,10 @@ with open("input.txt") as cal_file:
     for cal in cal_file.readlines():
         
         if cal == "\n":
-            max_cal = temp
-            print(temp)
+            if max_cal<temp:
+                max_cal = temp
+                print(max_cal)
             temp = 0
-        else:
+        else:    
             temp += int(cal.rstrip())
 
