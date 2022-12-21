@@ -14,5 +14,6 @@ with open("input.txt") as cal_file:
             current_calorie += int(cal.rstrip())
 
 print(max_cal)
+
 calorielist.sort(reverse=True)
-print(calorielist)
+print(sum((calorielist)[0:3]))
