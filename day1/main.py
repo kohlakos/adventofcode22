@@ -6,9 +6,10 @@ with open("input.txt") as cal_file:
         
         if cal == "\n":
             if max_cal<temp:
-                max_cal = temp
-                print(max_cal)
+                max_cal = temp  
             temp = 0
         else:    
             temp += int(cal.rstrip())
+
+print(max_cal)
 
