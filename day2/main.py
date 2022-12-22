@@ -14,6 +14,7 @@ with open("input.txt") as gamefile:
         if opponent == "C" and me == "Z":
             roundpoint += 3
         
+        #win
         if opponent == "A" and me == "Y":
             roundpoint += 6
         if opponent == "B" and me == "Z":
@@ -21,6 +22,7 @@ with open("input.txt") as gamefile:
         if opponent == "C" and me == "X":
             roundpoint += 6
 
+        #extra points
         if me == "X":
             roundpoint += 1
         if me == "Y":
@@ -28,8 +30,8 @@ with open("input.txt") as gamefile:
         if me == "Z":
             roundpoint += 3
 
+        #end of every round, actually that doesnt matter, I tought it would...
         if index % 3 == 0 :
-            #end of every round
             totalpoints += roundpoint
             roundpoint = 0
 
