@@ -1,8 +1,3 @@
-# A for Rock, B for Paper, and C for Scissors.
-# X for Rock, Y for Paper, and Z for Scissors.
-# Additional points: 1 for Rock, 2 for Paper, and 3 for Scissors.
-# Draw is 3 win is 6.
-
 totalpoints = 0
 with open("input.txt") as gamefile:
 
@@ -11,14 +6,12 @@ with open("input.txt") as gamefile:
         opponent = game[0]
         me = game[2]
 
+        #draw
         if opponent == "A" and me == "X":
-            #draw
             roundpoint += 3
         if opponent == "B" and me == "Y":
-            #draw
             roundpoint += 3
         if opponent == "C" and me == "Z":
-            #draw
             roundpoint += 3
         
         if opponent == "A" and me == "Y":
