@@ -30,7 +30,7 @@ with open("input.txt") as gamefile:
         if me == "Z":
             roundpoint += 3
 
-        #end of every round, actually that doesnt matter, I tought it would...
+        #end of every round, actually that doesnt matter, first I tought it would...
         if index % 3 == 0 :
             totalpoints += roundpoint
             roundpoint = 0
