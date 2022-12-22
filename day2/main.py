@@ -4,13 +4,12 @@
 # Draw is 3 win is 6.
 
 totalpoints = 0
-with open("test.txt") as gamefile:
+with open("input.txt") as gamefile:
 
     roundpoint = 0
-    for index, game in enumerate(gamefile.readlines(), 1):
+    for index, game in enumerate(gamefile.readlines()):
         opponent = game[0]
         me = game[2]
-        print(roundpoint)
 
         if opponent == "A" and me == "X":
             #draw
