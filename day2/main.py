@@ -4,7 +4,7 @@
 # Draw is 3 win is 6.
 
 totalpoints = 0
-with open("input.txt") as gamefile:
+with open("test.txt") as gamefile:
 
     my_points = 0
     opp_points = 0
