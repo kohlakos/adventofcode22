@@ -1,30 +1,35 @@
-#X means you need to lose, 
-#Y means you need to end the round in a draw
-#Z means you need to win.
+# A for Rock, B for Paper, and C for Scissors
+# X for Rock, Y for Paper, and Z for Scissors
 
 totalpoints = 0
-with open("input.txt") as gamefile:
+with open("text.txt") as gamefile:
 
     roundpoint = 0
     for index, game in enumerate(gamefile.readlines()):
         opponent = game[0]
-        me = game[2]
-
-        #draw
-        if opponent == "A" and me == "X":
-            roundpoint += 3
-        if opponent == "B" and me == "Y":
-            roundpoint += 3
-        if opponent == "C" and me == "Z":
-            roundpoint += 3
+        outcome = game[2]
+        me = ""
         
-        #win
-        if opponent == "A" and me == "Y":
-            roundpoint += 6
-        if opponent == "B" and me == "Z":
-            roundpoint += 6
-        if opponent == "C" and me == "X":
-            roundpoint += 6
+        if opponent == "A" and outcome == "X":
+            me = "Z"
+        if opponent == "A" and outcome == "Y":
+            me = "X"
+        if opponent == "A" and outcome == "Z":
+            me = "Y"
+
+        if opponent == "B" and outcome == "X":
+            me = "X"
+        if opponent == "B" and outcome == "Y":
+            me = "Y"
+        if opponent == "B" and outcome == "Z":
+            me = "Z"
+
+        if opponent == "C" and outcome == "X":
+            me = "Y"
+        if opponent == "C" and outcome == "Y":
+            me = "Z"
+        if opponent == "C" and outcome == "Z":
+            me = "X"
 
         #extra points
         if me == "X":
@@ -34,9 +39,15 @@ with open("input.txt") as gamefile:
         if me == "Z":
             roundpoint += 3
 
-        #end of every round, actually that doesnt matter, first I tought it would...
-        if index % 3 == 0 :
-            totalpoints += roundpoint
-            roundpoint = 0
+        #draw
+        if outcome == "Y":
+            roundpoint += 3
+
+        #win
+        if outcome == "Z":
+            roundpoint += 6
+
+        totalpoints += roundpoint
+        roundpoint = 0
 
 print(totalpoints)
