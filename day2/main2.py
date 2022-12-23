@@ -1,8 +1,5 @@
-# A for Rock, B for Paper, and C for Scissors
-# X for Rock, Y for Paper, and Z for Scissors
-
 totalpoints = 0
-with open("text.txt") as gamefile:
+with open("input.txt") as gamefile:
 
     roundpoint = 0
     for index, game in enumerate(gamefile.readlines()):
@@ -10,6 +7,7 @@ with open("text.txt") as gamefile:
         outcome = game[2]
         me = ""
         
+        #finding what I go with
         if opponent == "A" and outcome == "X":
             me = "Z"
         if opponent == "A" and outcome == "Y":
