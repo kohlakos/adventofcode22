@@ -10,18 +10,15 @@ def find_dup_char(input):
     WC = Counter(input)
 
     for letter, count in WC.items():
+        
         if (count > 1):
-            print(letter)
 
-""""
-    first_comp = ""
-    second_comp = ""
-    
-    length = int(len(rucksack))
-    divider = int(len(rucksack)/2)
-    first_comp = rucksack[0:divider]
-    second_comp = rucksack[divider:length]
-"""
+            length = int(len(input))
+            divider = int(len(input)/2)
+            first_comp = input[0:divider]
+            second_comp = input[divider:length]
+
+            print(letter, input)
 
 if __name__ == "__main__":
     input = load_input()
