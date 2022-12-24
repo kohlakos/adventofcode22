@@ -16,5 +16,9 @@ def load_input():
         for letter, count in itemlist.items():
             if (count > 1):
                 print(letter)
-        
-        #print(rucksack,first_comp,second_comp, length, divider)
+
+
+if __name__ == "__main__":
+    input = load_input()
+    for lines in input:
+        find_dup_char(lines)
