@@ -18,7 +18,11 @@ def find_dup_char(input):
             first_comp = input[0:divider]
             second_comp = input[divider:length]
 
-            print(letter, input)
+            lst = []
+            for pos,char in enumerate(input):
+                if(char == letter):
+                    lst.append(pos)
+            print(lst)
 
 if __name__ == "__main__":
     input = load_input()
