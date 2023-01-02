@@ -1,4 +1,21 @@
 from collections import Counter
+import string
+
+def load_points():
+    alphabet_lowercase = list(string.ascii_lowercase)
+    alphabet_uppercase = list(string.ascii_uppercase)
+    alphabet = alphabet_lowercase + alphabet_uppercase
+
+    point_dict = {}
+
+    for index, letter  in enumerate(alphabet):
+        new_key = letter
+        new_value = index + 1
+ 
+        point_dict[new_key] = new_value
+
+    return point_dict
+
 
 def load_input():
     with open('test.txt', mode='r') as file:
@@ -25,6 +42,8 @@ def find_dup_char(input):
             print(lst)
 
 if __name__ == "__main__":
+    points = load_points()
     input = load_input()
+    
     for lines in input:
         find_dup_char(lines)
